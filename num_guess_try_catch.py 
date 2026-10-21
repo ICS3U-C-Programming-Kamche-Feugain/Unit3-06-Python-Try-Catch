@@ -1,0 +1,36 @@
+#!/usr/bin/env python3\
+# Created By:Kamche
+# Created on: October 9, 2026
+# This program asks the user a valid integer and
+# casting the string into a integer
+# by guessing the user guess is valid or not
+import random
+
+
+def main():
+    random_number = int(random.randint(0, 9))
+
+    # ask the user to pick a number between 0 and 9
+    user_guess = input("Guess a number between 0 and 9: ")
+    print("")
+
+    # get the user guess as a string and cast it to an integer
+    try:
+        user_input = int(user_guess)
+
+        # check if user guess is correct
+        if user_input == random_number:
+            print("You have guessed the valid integer value!!")
+        else:
+            print("you guessed wrong ")
+            print("the correct answer is :{}".format(random_number))
+    except ValueError:
+        print("{} is not a valid integer".format(user_guess))
+    finally:
+        print("Thanks for playing")
+        print("Hope this program was fun")
+        print("Bye now!!")
+
+
+if __name__ == "__main__":
+    main()
